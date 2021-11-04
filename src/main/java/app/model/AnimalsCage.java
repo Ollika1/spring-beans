@@ -1,6 +1,5 @@
 package app.model;
 
-
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -8,10 +7,11 @@ import org.springframework.stereotype.Component;
 public class AnimalsCage {
 
     private final Animal animal;
-    private final Timer timer= new Timer();
+    private final Timer timer;
 
-    public AnimalsCage(@Qualifier("dog") Animal animal) {
+    public AnimalsCage(@Qualifier("dog") Animal animal, @Qualifier("timer") Timer timer) {
         this.animal = animal;
+        this.timer = timer;
     }
 
     public void whatAnimalSay() {
